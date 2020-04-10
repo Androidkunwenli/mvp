@@ -23,6 +23,7 @@ class MainActivity : BaseMvpActivity<MainPresenterImpl>(), MainContract.View {
         tv_request.setOnClickListener {
             presenter.getFriendData(1, 10, "video")
         }
+
     }
 
 
