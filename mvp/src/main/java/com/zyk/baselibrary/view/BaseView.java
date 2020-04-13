@@ -1,5 +1,7 @@
 package com.zyk.baselibrary.view;
 
-public interface BaseView {
+import com.zyk.baselibrary.http.exception.ResponseException;
 
+public interface BaseView {
+    void onFriendError(ResponseException e);
 }

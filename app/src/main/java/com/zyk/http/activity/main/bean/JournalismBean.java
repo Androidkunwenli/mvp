@@ -1,4 +1,4 @@
-package com.zyk.http.activity.bean;
+package com.zyk.http.activity.main.bean;
 
 /**
  * Author: kk

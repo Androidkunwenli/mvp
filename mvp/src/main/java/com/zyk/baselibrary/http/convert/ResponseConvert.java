@@ -13,7 +13,7 @@ import io.reactivex.functions.Function;
 public class ResponseConvert<E> implements Function<BaseResponse<E>, E> {
     @Override
     public E apply(BaseResponse<E> baseResponse) {
-        if (baseResponse.getCode() != 200) {
+        if (baseResponse.getCode() != 0) {
             // 手动抛出异常
             throw new ApiException(baseResponse.getCode(), baseResponse.getMessage());
         }

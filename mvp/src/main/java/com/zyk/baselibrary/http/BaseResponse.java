@@ -1,24 +1,24 @@
 package com.zyk.baselibrary.http;
 
 public class BaseResponse<T> {
-    private int code;
-    private String message;
+    private int error_code;
+    private String reason;
     private T result;
 
     public int getCode() {
-        return code;
+        return error_code;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setCode(int error_code) {
+        this.error_code = error_code;
     }
 
     public String getMessage() {
-        return message;
+        return reason;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessage(String reason) {
+        this.reason = reason;
     }
 
     public T getResult() {

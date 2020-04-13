@@ -95,12 +95,7 @@ public class RequestManager {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
-                .flatMap(new Function<BaseResponse<E1>, ObservableSource<BaseResponse<E2>>>() {
-                    @Override
-                    public ObservableSource<BaseResponse<E2>> apply(BaseResponse<E1> baseResponse) throws Exception {
-                        return listener.onExecuteResult(baseResponse);
-                    }
-                })
+                .flatMap((Function<BaseResponse<E1>, ObservableSource<BaseResponse<E2>>>) baseResponse -> listener.onExecuteResult(baseResponse))
                 .map(new ResponseConvert<E2>())
                 .onErrorResumeNext(new ExceptionConvert<E2>())
                 .observeOn(AndroidSchedulers.mainThread())
